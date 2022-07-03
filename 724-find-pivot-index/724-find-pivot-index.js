@@ -4,10 +4,7 @@
  */
 var pivotIndex = function(nums) {
     
-    let total = 0
-    for (const n in nums) {
-        total += n
-    }
+    let total = eval(nums.join("+"));
     
     let leftSum = 0
     let rightSum = nums.reduce((a,b) => a + b)
