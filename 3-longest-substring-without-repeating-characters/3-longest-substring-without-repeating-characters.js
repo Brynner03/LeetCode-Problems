@@ -3,6 +3,8 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function(s) {
+    // Time Complexity: 0(N^2)
+    // Space Complexity: 0(N)
     let counter = 0
     
     if(s.length <= 1) return s.length;
