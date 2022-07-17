@@ -2,6 +2,10 @@
  * @param {string} s
  * @return {number}
  */
+
+// Time Complexity: 0(N)
+// Space Complexity: 0(N)
+
 var lengthOfLongestSubstring = function(s) {
     if(s.length <= 1) return s.length;
     
