@@ -9,19 +9,19 @@
 var lengthOfLongestSubstring = function(s) {
     if(s.length <= 1) return s.length;
     
-    const seenChars = {}
+    const seenChars = new Map()
     let counter = 0, left = 0
 
     
     for (let right = 0; right < s.length; right++) {
         const currentChar = s[right]
-        const prevSeenChar = seenChars[currentChar]
+        const prevSeenChar = seenChars.get(currentChar)
         
         if(prevSeenChar >= left) {
             left = prevSeenChar + 1
         }
         
-        seenChars[currentChar] = right
+        seenChars.set(currentChar, right)
         counter = Math.max(counter, right - left + 1)
     }
     return counter
