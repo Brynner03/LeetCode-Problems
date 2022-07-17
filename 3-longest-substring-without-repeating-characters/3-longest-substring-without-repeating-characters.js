@@ -9,7 +9,7 @@
 var lengthOfLongestSubstring = function(s) {
     if(s.length <= 1) return s.length;
     
-    const seenChars = new Map()
+    const seenChars = {}
     let counter = 0, left = 0
 
     
