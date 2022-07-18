@@ -10,7 +10,8 @@
  * @return {ListNode}
  */
 var reverseList = function(head) {
-    
+    // Time: 0(N)
+    // Space: 0(1)
     let prev = null
     let currentNode = head
     
