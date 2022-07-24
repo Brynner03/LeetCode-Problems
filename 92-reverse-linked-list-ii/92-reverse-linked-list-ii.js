@@ -25,7 +25,7 @@ var reverseBetween = function(head, left, right) {
     }
     let newList = null
     let tail = currentNode
-    while (currentPosition >=left && currentPosition <= right) {
+    while (currentPosition >= left && currentPosition <= right) {
         const next = currentNode.next
         currentNode.next = newList
         newList = currentNode
