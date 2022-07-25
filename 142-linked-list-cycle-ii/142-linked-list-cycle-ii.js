@@ -12,31 +12,38 @@
  */
 var detectCycle = function(head) {
     
-    if(!head) return null;
-  
-  let tortoise = head, hare = head;
-  
-  while(true) {
-    tortoise = tortoise.next;
-    hare = hare.next;
+    if(!head) return null
+    // Floyd's Hare and Tortoise Algorithm
     
-    if(hare === null || hare.next === null) {
-      return null;
-    } else {
-      hare = hare.next;
+    let hare = head
+    let tortoise = head
+    
+    // Will continue until something in the code tells it to break.
+    
+    while(true) {
+        
+        hare = hare.next
+        tortoise = tortoise.next
+        
+        if(hare === null || hare.next === null) {
+            return null
+        } else {
+            // Advance the hare another step
+            hare = hare.next
+        }
+        
+        if (tortoise === hare) break
+    
     }
     
-    if(tortoise === hare) break;
-  }
-  
-  let p1 = head,
-      p2 = tortoise;
-  
-  while(p1 !== p2) {
-    p1 = p1.next;
-    p2 = p2.next;
-  }
-  
-  return p2
+    let pointer1 = head
+    let pointer2 = tortoise
+    
+    while(pointer1 !== pointer2) {
+        pointer1 = pointer1.next
+        pointer2 = pointer2.next
+    }
+    
+    return pointer1
     
 };
