@@ -4,6 +4,9 @@
  */
 var minRemoveToMakeValid = function(s) {
     
+    // Time Complexity: 0(N)
+    // Space Complexity: 0(N)
+    
     const res = s.split("")
     const stack = []
     
