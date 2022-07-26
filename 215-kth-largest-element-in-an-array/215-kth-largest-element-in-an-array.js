@@ -4,6 +4,8 @@
  * @return {number}
  */
 var findKthLargest = function(nums, k) {
+    // Time: 0(nlogn)
+    // Space: 0(nlogn)
     const indexToFind = nums.length - k
     quickSort(nums,0,nums.length-1)
     return nums[indexToFind]
