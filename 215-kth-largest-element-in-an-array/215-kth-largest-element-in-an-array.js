@@ -15,8 +15,9 @@ var findKthLargest = function(nums, k) {
         // Time Complexity
         // Best: 0(N)
         // Worst: 0(N^2)
+        
         // Space Complexity
-        // Best: 0(1)
+        // 0(1)
         
         if(left < right){
             const partitionIdx = partition(nums, left, right)
