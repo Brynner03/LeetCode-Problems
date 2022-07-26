@@ -4,22 +4,36 @@
  * @return {number}
  */
 var findKthLargest = function(nums, k) {
-    // Time: 0(nlogn)
-    // Space: 0(nlogn)
+   
     const indexToFind = nums.length - k
-    quickSort(nums,0,nums.length-1)
+    quickSelect(nums, 0, nums.length-1, indexToFind)
     return nums[indexToFind]
 }
     
-    const quickSort = function(nums, left, right) {
+    const quickSelect = function(nums, left, right, idxToFind) {
+        
+        // Time Complexity
+        // Best: 0(N)
+        // Worst: 0(N^2)
+        // Space Complexity
+        // Best: 0(1)
+        
         if(left < right){
             const partitionIdx = partition(nums, left, right)
-            quickSort(nums,left,partitionIdx - 1)
-            quickSort(nums,partitionIdx + 1, right)
+            if(partitionIdx === idxToFind) {
+                return nums[partitionIdx]
+            } else if (idxToFind < partitionIdx) {
+                return quickSelect(nums,left,partitionIdx - 1, idxToFind)
+            } else {
+                return quickSelect(nums,partitionIdx+1,right,idxToFind)
+            }
         }
     }
     
     const partition = function(nums, left, right) {
+        
+        // 0(N)
+        
         const pivotElement = nums[right]
         let partitionIdx = left
         for (let j = left; j < right; j++) {
