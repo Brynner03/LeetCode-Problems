@@ -17,6 +17,9 @@ var levelOrder = function(root) {
     const result = []
     const queue = [root]
     
+    // Time: 0(N)
+    // Space: 0(N)
+    
     while(queue.length) {
         let length = queue.length, count = 0
         const currentLevelValues = []
