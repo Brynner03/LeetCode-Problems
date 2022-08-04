@@ -12,7 +12,7 @@
  */
 var maxDepth = function(root) {
     
-    // BFS Approach
+    // Recursive DFS Approach
     // Time: 0(N)
     // Space: 0(1)
     
