@@ -9,7 +9,6 @@ var runningSum = function(nums) {
     
     for (let i = 0; i < nums.length; i++) {
         runner += nums[i]
-        nums[i] += runner
         newArr.push(runner)
     }
     return newArr
