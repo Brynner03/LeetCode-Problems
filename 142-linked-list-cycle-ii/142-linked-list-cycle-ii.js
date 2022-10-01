@@ -13,37 +13,28 @@
 var detectCycle = function(head) {
     
     if(!head) return null
-    // Floyd's Hare and Tortoise Algorithm
+    if(!head.next) return null
     
-    let hare = head
-    let tortoise = head
+    let fast = head
+    let slow = head
     
-    // Will continue until something in the code tells it to break.
+    let pointer = head
     
-    while(true) {
+    // To figure where fast and slow are going to intersect
+    while (fast && fast.next) {
+        fast = fast.next.next // Incrememnt by 2
+        slow = slow.next
         
-        hare = hare.next
-        tortoise = tortoise.next
-        
-        if(hare === null || hare.next === null) {
-            return null
-        } else {
-            // Advance the hare another step
-            hare = hare.next
-        }
-        
-        if (tortoise === hare) break
-    
+        if(fast === slow) break
     }
     
-    let pointer1 = head
-    let pointer2 = tortoise
+    // Means that there's no cycle
+    if (fast !== slow) return null
     
-    while(pointer1 !== pointer2) {
-        pointer1 = pointer1.next
-        pointer2 = pointer2.next
+    // To check the cycle
+    while (pointer !== slow) {
+        pointer = pointer.next
+        slow = slow.next
     }
-    
-    return pointer1
-    
+    return slow
 };
